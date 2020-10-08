@@ -15,6 +15,12 @@ class App extends React.Component {
       };
     });
   };
+
+  removeListItem = (event) => {
+    console.log(event.target);
+    return <strike>{event.target}</strike>
+  }
+
   render() {
     return (
       <div className="App">
@@ -23,10 +29,9 @@ class App extends React.Component {
         </header>
         <ul>
           {this.state.list.map((item) => {
-            return <li key={item}>{item}</li>;
+            return <li onClick={this.removeListItem} key={item}>{item}</li>;
           })}
         </ul>
-
         <ItemAdder addListItem={this.addListItem} />
       </div>
     );
