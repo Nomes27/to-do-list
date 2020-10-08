@@ -1,21 +1,40 @@
-import React from 'react';
+import React from "react";
 
 class ItemAdder extends React.Component {
-
   state = {
+    listItem: "",
+  };
 
-  }
-
+  handleUpdate = (event) => {
+    //const listItem = event.target.name;
+    const value = event.target.value;
+    this.setState(() => {
+      return {
+        listItem: value,
+      };
+    });
+  };
 
   render() {
-    return <form>
-      <label htmlFor="list-item">
-        Input Item:
-</label>
-      <input name="list-item" id="list-item" type="text" />
-    </form>
+    return (
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+
+          this.props.addListItem(this.state.listItem);
+        }}
+      >
+        <label htmlFor="list-item">Input Item:</label>
+        <input
+          name="listItem"
+          id="list-item"
+          type="text"
+          onChange={this.handleUpdate}
+        />
+        <button>Add a list item</button>
+      </form>
+    );
   }
 }
 
-
-export default ItemAdder
+export default ItemAdder;
