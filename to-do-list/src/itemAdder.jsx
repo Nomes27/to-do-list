@@ -21,7 +21,7 @@ class ItemAdder extends React.Component {
         onSubmit={(event) => {
           event.preventDefault();
 
-          this.props.addListItem(this.state.listItem)
+          this.props.addListItem(this.state.listItem);
           this.setState({ listItem: "" });
         }}
       >
@@ -33,6 +33,8 @@ class ItemAdder extends React.Component {
           onChange={this.handleUpdate}
           value={this.state.listItem}
         />
+        <label htmlFor="due-date">Date due:</label>
+        <input name="due-date"></input>
         <button>Add a list item</button>
       </form>
     );

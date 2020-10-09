@@ -5,21 +5,40 @@ import ItemAdder from "./itemAdder";
 
 class App extends React.Component {
   state = {
-    list: ["item1", "item2", "item3"],
+    list: [
+      { name: "item1", done: false },
+      { name: "item2", done: false },
+      { name: "item3", done: false },
+    ],
   };
 
   addListItem = (listItem) => {
     this.setState((previousState) => {
       return {
-        list: [...previousState.list, listItem],
+        list: [...previousState.list, { name: listItem, done: false }],
       };
     });
   };
 
   removeListItem = (event) => {
-    console.log(event.target);
-    return <strike>{event.target}</strike>
-  }
+    const selectedItem = event.target.innerText;
+
+    this.setState((previousState) => {
+      return {
+        list: previousState.list.map((item) => {
+          if (item.name === selectedItem) {
+            const copyItem = { ...item };
+            copyItem.done = !copyItem.done;
+            return copyItem;
+          } else {
+            return item;
+          }
+        }),
+        //list: [...previousState.list, <strike>{toDelete}</strike>],
+      };
+    });
+    //return <strike>{event.target}</strike>;
+  };
 
   render() {
     return (
@@ -29,7 +48,21 @@ class App extends React.Component {
         </header>
         <ul>
           {this.state.list.map((item) => {
-            return <li onClick={this.removeListItem} key={item}>{item}</li>;
+            if (item.done === true) {
+              return (
+                <li key={item.name}>
+                  <button class="strike" onClick={this.removeListItem}>
+                    {item.name}
+                  </button>
+                </li>
+              );
+            } else {
+              return (
+                <li key={item.name}>
+                  <button onClick={this.removeListItem}>{item.name}</button>
+                </li>
+              );
+            }
           })}
         </ul>
         <ItemAdder addListItem={this.addListItem} />
