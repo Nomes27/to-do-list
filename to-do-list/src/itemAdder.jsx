@@ -3,14 +3,15 @@ import React from "react";
 class ItemAdder extends React.Component {
   state = {
     listItem: "",
+    dueDate: ""
   };
 
   handleUpdate = (event) => {
-    //const listItem = event.target.name;
+    const listItem = event.target.name;
     const value = event.target.value;
     this.setState(() => {
       return {
-        listItem: value,
+        [listItem]: value,
       };
     });
   };
@@ -20,8 +21,7 @@ class ItemAdder extends React.Component {
       <form
         onSubmit={(event) => {
           event.preventDefault();
-
-          this.props.addListItem(this.state.listItem);
+          this.props.addListItem(this.state.listItem, this.state.dueDate);
           this.setState({ listItem: "" });
         }}
       >
@@ -34,7 +34,13 @@ class ItemAdder extends React.Component {
           value={this.state.listItem}
         />
         <label htmlFor="due-date">Date due:</label>
-        <input name="due-date"></input>
+        <input
+          name="dueDate"
+          id="due-date"
+          type="date"
+          onChange={this.handleUpdate}
+          value={this.state.listItem}
+        ></input>
         <button>Add a list item</button>
       </form>
     );

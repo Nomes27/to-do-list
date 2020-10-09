@@ -6,23 +6,23 @@ import ItemAdder from "./itemAdder";
 class App extends React.Component {
   state = {
     list: [
-      { name: "item1", done: false },
-      { name: "item2", done: false },
-      { name: "item3", done: false },
+      { name: "item1", done: false, dueDate: "10/12/2020" },
+      { name: "item2", done: false, dueDate: "10/11/2020" },
+      { name: "item3", done: false, dueDate: "11/12/2020" },
     ],
   };
 
-  addListItem = (listItem) => {
+  addListItem = (listItem, dueDate) => {
     this.setState((previousState) => {
       return {
-        list: [...previousState.list, { name: listItem, done: false }],
+        list: [...previousState.list, { name: listItem, done: false, dueDate: dueDate }],
       };
     });
   };
 
   removeListItem = (event) => {
     const selectedItem = event.target.innerText;
-
+    console.log(selectedItem);
     this.setState((previousState) => {
       return {
         list: previousState.list.map((item) => {
@@ -53,13 +53,13 @@ class App extends React.Component {
                 <li key={item.name}>
                   <button class="strike" onClick={this.removeListItem}>
                     {item.name}
-                  </button>
+                  </button><p>{item.dueDate}</p>
                 </li>
               );
             } else {
               return (
                 <li key={item.name}>
-                  <button onClick={this.removeListItem}>{item.name}</button>
+                  <button onClick={this.removeListItem}>{item.name}</button><p>{item.dueDate}</p>
                 </li>
               );
             }
