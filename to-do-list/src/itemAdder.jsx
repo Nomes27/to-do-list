@@ -43,7 +43,7 @@ class ItemAdder extends React.Component {
           onChange={this.handleUpdate}
         ></input>
 
-        <button className="add">Add a list item</button>
+        <button className="add">Add a task to complete</button>
       </form>
     );
   }
