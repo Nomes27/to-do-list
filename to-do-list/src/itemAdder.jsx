@@ -1,9 +1,9 @@
 import React from "react";
-
+import "./App.css";
 class ItemAdder extends React.Component {
   state = {
     listItem: "",
-    dueDate: ""
+    dueDate: "",
   };
 
   handleUpdate = (event) => {
@@ -27,6 +27,7 @@ class ItemAdder extends React.Component {
       >
         <label htmlFor="list-item">Input Item:</label>
         <input
+          className="input-form"
           name="listItem"
           id="list-item"
           type="text"
@@ -35,6 +36,7 @@ class ItemAdder extends React.Component {
         />
         <label htmlFor="due-date">Date due:</label>
         <input
+          className="input-form"
           name="dueDate"
           id="due-date"
           type="date"

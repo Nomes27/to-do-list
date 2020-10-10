@@ -6,16 +6,18 @@ import ItemAdder from "./itemAdder";
 class App extends React.Component {
   state = {
     list: [
-      { name: "item1", done: false, dueDate: "10/12/2020" },
-      { name: "item2", done: false, dueDate: "10/11/2020" },
-      { name: "item3", done: false, dueDate: "11/12/2020" },
+      { name: "make tea", done: false, dueDate: "10/12/2020" },
+      { name: "coding task", done: false, dueDate: "10/11/2020" },
     ],
   };
 
   addListItem = (listItem, dueDate) => {
     this.setState((previousState) => {
       return {
-        list: [...previousState.list, { name: listItem, done: false, dueDate: dueDate }],
+        list: [
+          ...previousState.list,
+          { name: listItem, done: false, dueDate: dueDate },
+        ],
       };
     });
   };
@@ -34,10 +36,8 @@ class App extends React.Component {
             return item;
           }
         }),
-        //list: [...previousState.list, <strike>{toDelete}</strike>],
       };
     });
-    //return <strike>{event.target}</strike>;
   };
 
   render() {
@@ -51,15 +51,17 @@ class App extends React.Component {
             if (item.done === true) {
               return (
                 <li key={item.name}>
-                  <button class="strike" onClick={this.removeListItem}>
+                  <button className="strike" onClick={this.removeListItem}>
                     {item.name}
-                  </button><p>{item.dueDate}</p>
+                  </button>
+                  <p>{item.dueDate}</p>
                 </li>
               );
             } else {
               return (
                 <li key={item.name}>
-                  <button onClick={this.removeListItem}>{item.name}</button><p>{item.dueDate}</p>
+                  <button onClick={this.removeListItem}>{item.name}</button>
+                  <p>{item.dueDate}</p>
                 </li>
               );
             }
