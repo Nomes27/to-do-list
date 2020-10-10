@@ -1,6 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Trykker&display=swap");
+
+body {
+  background-image: url("./cacti-pale.jpeg");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .App {
   text-align: center;
+  font-family: "Trykker", serif;
 }
+
 li {
   list-style-type: none;
   display: flex;
@@ -15,12 +25,22 @@ li button {
 .strike {
   text-decoration: line-through;
   color: red;
-  border: red solid 2px;
+  border: red solid 0.5px;
+}
+.strike-date {
+  text-decoration: line-through;
+  color: red;
 }
 
 button {
   width: 35%;
   padding: 0.5rem;
+  background-color: rgba(226, 240, 234, 0.986);
+  font-family: "Trykker", serif;
+  border-color: rgb(172, 150, 31);
+}
+.add {
+  margin-bottom: 2rem;
 }
 .input-form {
   display: flex;
@@ -29,19 +49,27 @@ button {
   margin-bottom: 1rem;
   margin-top: 0.5rem;
   width: 50%;
+  box-shadow: 2px 2px 5px rgb(66, 66, 66);
 }
 
 label {
   margin-bottom: 2rem;
+  font-size: 1.2rem;
 }
 .App-header {
-  background-color: #282c34;
+  background-color: #85b3a0;
+  /* #1f331f;*/
+  /*#9ad6bd;*/
+  background-position-y: 18%;
+  background-size: cover;
   min-height: 20px;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(13px + 2vmin);
   color: white;
 }
 
@@ -49,6 +77,7 @@ label {
   button {
     width: 15%;
     padding: 0.5rem;
+    font-size: 1rem;
   }
   li {
     list-style-type: none;
@@ -56,6 +85,7 @@ label {
     flex-direction: row;
     padding: 1rem;
     justify-content: center;
+    margin: auto;
   }
   li button {
     margin-right: 2rem;
@@ -73,5 +103,16 @@ label {
     display: flex;
     flex-direction: row;
     margin: auto;
+    width: 20%;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .App-header {
+    background-position-y: 15%;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 }

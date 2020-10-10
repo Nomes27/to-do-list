@@ -44,8 +44,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>Our To Do List</h1>
+          <h1>To Do List</h1>
         </header>
+
         <ul>
           {this.state.list.map((item) => {
             if (item.done === true) {
@@ -54,7 +55,7 @@ class App extends React.Component {
                   <button className="strike" onClick={this.removeListItem}>
                     {item.name}
                   </button>
-                  <p>{item.dueDate}</p>
+                  <p className="strike-date">{item.dueDate}</p>
                 </li>
               );
             } else {
