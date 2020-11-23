@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Trykker&display=swap");
 
+:root {
+  --green: #85b3a0;
+  --paleGreen: #85b3a071;
+}
 body {
   background-image: url("./cacti-pale.jpeg");
 
@@ -37,10 +41,20 @@ button {
   padding: 0.5rem;
   background-color: rgba(226, 240, 234, 0.986);
   font-family: "Trykker", serif;
-  border-color: rgb(172, 150, 31);
+  border-color: rgb(19, 53, 50);
+  margin: 1rem;
+  border-radius: 25px;
 }
-.add {
-  margin-bottom: 2rem;
+button:hover {
+  box-shadow: 0 0 5px 4px rgba(57, 58, 57, 0.623);
+
+  transition: 0.5s ease;
+}
+#list-item {
+  padding: 1rem;
+}
+#due-date {
+  padding: 0.5rem;
 }
 .input-form {
   display: flex;
@@ -50,6 +64,7 @@ button {
   margin-top: 0.5rem;
   width: 50%;
   box-shadow: 2px 2px 5px rgb(66, 66, 66);
+  border-radius: 10px;
 }
 
 label {
@@ -77,7 +92,8 @@ label {
   button {
     width: 15%;
     padding: 0.5rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    margin: 2rem;
   }
   li {
     list-style-type: none;
@@ -108,11 +124,17 @@ label {
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   .App-header {
     background-position-y: 15%;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .due-date-text {
+    font-size: 1.5rem;
+  }
+  .strike-date {
+    font-size: 1.5rem;
   }
 }

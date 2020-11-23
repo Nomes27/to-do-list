@@ -5,10 +5,7 @@ import ItemAdder from "./itemAdder";
 
 class App extends React.Component {
   state = {
-    list: [
-      { name: "make tea", done: false, dueDate: "10/12/2020" },
-      { name: "coding task", done: false, dueDate: "10/11/2020" },
-    ],
+    list: [],
   };
 
   addListItem = (listItem, dueDate) => {
@@ -39,6 +36,9 @@ class App extends React.Component {
       };
     });
   };
+  clearList = () => {
+    this.setState({ list: [] });
+  };
 
   render() {
     return (
@@ -46,28 +46,47 @@ class App extends React.Component {
         <header className="App-header">
           <h1>To Do List</h1>
         </header>
+        <button onClick={this.clearList}>Clear List</button>
+        <table>
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Date Due</th>
+            </tr>
+          </thead>
 
-        <ul>
           {this.state.list.map((item) => {
             if (item.done === true) {
               return (
-                <li key={item.name}>
-                  <button className="strike" onClick={this.removeListItem}>
-                    {item.name}
-                  </button>
-                  <p className="strike-date">{item.dueDate}</p>
-                </li>
+                <tr key={item.name} className="list-item-container">
+                  <td>
+                    {" "}
+                    <button className="strike" onClick={this.removeListItem}>
+                      {item.name}
+                    </button>
+                  </td>
+
+                  <td className="strike-date">{item.dueDate}</td>
+                </tr>
               );
             } else {
               return (
-                <li key={item.name}>
-                  <button onClick={this.removeListItem}>{item.name}</button>
-                  <p>{item.dueDate}</p>
-                </li>
+                <tbody key={item.name}>
+                  <tr className="list-item-container">
+                    <td>
+                      <button onClick={this.removeListItem}>
+                        {" "}
+                        {item.name}
+                      </button>
+                    </td>
+
+                    <td className="due-date-text">{item.dueDate}</td>
+                  </tr>
+                </tbody>
               );
             }
           })}
-        </ul>
+        </table>
         <ItemAdder addListItem={this.addListItem} />
       </div>
     );

@@ -25,7 +25,7 @@ class ItemAdder extends React.Component {
           this.setState({ listItem: "", dueDate: "" });
         }}
       >
-        <label htmlFor="list-item">Input Item:</label>
+        <label htmlFor="list-item">Add Item:</label>
         <input
           className="input-form"
           name="listItem"
