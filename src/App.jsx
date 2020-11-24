@@ -63,7 +63,7 @@ class App extends React.Component {
                     <td>
                       {" "}
                       <button
-                        className="list-item-container--strike"
+                        className="button-list-item--strike"
                         onClick={this.removeListItem}
                       >
                         {item.name}
@@ -79,7 +79,10 @@ class App extends React.Component {
                 <tbody key={item.name}>
                   <tr className="list-item-container">
                     <td>
-                      <button onClick={this.removeListItem}>
+                      <button
+                        onClick={this.removeListItem}
+                        className="button-list-item"
+                      >
                         {" "}
                         {item.name}
                       </button>
