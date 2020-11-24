@@ -10,7 +10,7 @@ It allows users to type in tasks to complete, along with a due date and add them
 
 To run locally, git clone, npm install and run the following script in the project directory:
 
-`npm start`
+**npm start**
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
