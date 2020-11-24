@@ -2,8 +2,7 @@
 
 This project was created with [Create React App](https://github.com/facebook/create-react-app).
 
-It allows users to type in tasks to complete, along with a due date and add them to a to do list. To mark something off the list, u user can click on the item. If a user wants to completely cleear the list they can select the 'clear list' button. 
-
+This app allows users to type in tasks to complete, along with a due date and add them to their list. To mark something off the list, a user can click on the item. If a user wants to completely clear the list they can select the 'clear list' button. 
 
 
 ### Run Locally
