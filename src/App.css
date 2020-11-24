@@ -3,51 +3,62 @@
 :root {
   --green: #85b3a0;
   --paleGreen: #85b3a071;
+  --outline: rgb(19, 53, 50);
 }
-body {
-  background-image: url("./cacti-pale.jpeg");
 
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 .App {
   text-align: center;
   font-family: "Trykker", serif;
 }
-
-li {
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-  padding: 1rem;
-  justify-content: center;
+table {
+  width: 80%;
+  border: 2px solid var(--outline);
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--outline);
 }
-li button {
-  margin-right: 1rem;
-}
-
-.strike {
-  text-decoration: line-through;
-  color: red;
-  border: red solid 0.5px;
-}
-.strike-date {
-  text-decoration: line-through;
-  color: red;
-}
-
-button {
-  width: 35%;
+.button-list-item {
+  width: 100%;
   padding: 0.5rem;
   background-color: rgba(226, 240, 234, 0.986);
   font-family: "Trykker", serif;
-  border-color: rgb(19, 53, 50);
+  border-color: var(--outline);
   margin: 1rem;
   border-radius: 25px;
 }
-button:hover {
-  box-shadow: 0 0 5px 4px rgba(57, 58, 57, 0.623);
+.due-date-text {
+  width: 50%;
+  padding: 0.5rem;
+}
+.button-list-item--strike {
+  text-decoration: line-through;
+  color: red;
+  border: red solid 0.5px;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: rgba(226, 240, 234, 0.986);
+  font-family: "Trykker", serif;
+  border-color: var(--outline);
+  margin: 1rem;
+  border-radius: 25px;
+}
+.due-date-text--strike {
+  text-decoration: line-through;
+  color: red;
+  width: 50%;
+  padding: 0.5rem;
+}
+button {
+  padding: 0.5rem;
+  background-color: rgba(226, 240, 234, 0.986);
+  font-family: "Trykker", serif;
+  border-color: var(--outline);
+  margin: 1rem;
+  border-radius: 25px;
+}
 
+button:hover {
+  box-shadow: 0 0 3px 3px rgba(57, 58, 57, 0.623);
   transition: 0.5s ease;
 }
 #list-item {
@@ -95,24 +106,10 @@ label {
     font-size: 1.5rem;
     margin: 2rem;
   }
-  li {
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    padding: 1rem;
-    justify-content: center;
-    margin: auto;
+  button:hover {
+    box-shadow: 0 0 5px 4px rgba(57, 58, 57, 0.623);
+    transition: 0.5s ease;
   }
-  li button {
-    margin-right: 2rem;
-  }
-
-  .strike {
-    text-decoration: line-through;
-    color: red;
-    border: red solid 2px;
-  }
-
   .input-form {
     margin-right: 2rem;
     margin-left: 1rem;
@@ -131,10 +128,18 @@ label {
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
+  .button-list-item {
+    font-size: 1.5rem;
+  }
+  .button-list-item--strike {
+    text-decoration: line-through;
+    color: red;
+    border: red solid 2px;
+  }
   .due-date-text {
     font-size: 1.5rem;
   }
-  .strike-date {
+  .due-date-text--strike {
     font-size: 1.5rem;
   }
 }

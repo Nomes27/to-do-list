@@ -58,16 +58,21 @@ class App extends React.Component {
           {this.state.list.map((item) => {
             if (item.done === true) {
               return (
-                <tr key={item.name} className="list-item-container">
-                  <td>
-                    {" "}
-                    <button className="strike" onClick={this.removeListItem}>
-                      {item.name}
-                    </button>
-                  </td>
+                <tbody>
+                  <tr key={item.name} className="list-item-container">
+                    <td>
+                      {" "}
+                      <button
+                        className="list-item-container--strike"
+                        onClick={this.removeListItem}
+                      >
+                        {item.name}
+                      </button>
+                    </td>
 
-                  <td className="strike-date">{item.dueDate}</td>
-                </tr>
+                    <td className="due-date-text--strike">{item.dueDate}</td>
+                  </tr>
+                </tbody>
               );
             } else {
               return (
